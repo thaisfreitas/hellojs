@@ -7,10 +7,24 @@ describe('ShoppingCart', function() {
     expect(shoppingCart.items.length).to.be.equal(0);
   });
 
-  it('add item to shopping cart', function(){
-    var item = { name: 'agua de coco', price: 10 };
-    var shoppingCart = ShoppingCart();
-    shoppingCart.add(item);
-    expect(shoppingCart.items.length).to.be.equal(1);
+  describe('add', function() {
+    it('adds items to shopping cart', function(){
+      var item = { name: 'agua de coco', price: 10 };
+      var shoppingCart = ShoppingCart();
+      shoppingCart.add(item);
+      expect(shoppingCart.items.length).to.be.equal(1);
+    });
+  });
+
+  describe('reset', function() {
+    it('resets the shopping cart', function() {
+      var item = { name: 'agua de coco', price: 10 };
+      var shoppingCart = ShoppingCart();
+
+      shoppingCart.add(item);
+      expect(shoppingCart.items.length).to.be.equal(1);
+      shoppingCart.reset()
+      expect(shoppingCart.items.length).to.be.equal(0);
+    });
   });
 });
