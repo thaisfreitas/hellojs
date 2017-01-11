@@ -36,15 +36,17 @@ describe('ShoppingCart', function() {
     });
 
     context('when there are multiple items', function() {
-      it('resets the shopping cart', function() {
-        var itemA = { name: 'agua de coco', price: 10 };
-        var itemB = { name: 'cocacola', price: 12 };
-        var itemC = { name: 'soda', price: 15 };
-
+      var itemA, itemB, itemC;
+      beforeEach(function (){
+        itemA = { name: 'agua de coco', price: 10 };
+        itemB = { name: 'cocacola', price: 12 };
+        itemC = { name: 'soda', price: 15 };
         shoppingCart.add(itemA);
         shoppingCart.add(itemB);
         shoppingCart.add(itemC);
-        expect(shoppingCart.items.length).to.be.equal(3);
+      });
+
+      it('resets the shopping cart', function() {
         shoppingCart.reset();
         expect(shoppingCart.items.length).to.be.equal(0);
       });
