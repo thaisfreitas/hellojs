@@ -33,11 +33,13 @@ describe('ShoppingCart', function() {
       it('resets the shopping cart', function() {
         var itemA = { name: 'agua de coco', price: 10 };
         var itemB = { name: 'cocacola', price: 12 };
+        var itemC = { name: 'soda', price: 15 };
         var shoppingCart = ShoppingCart();
 
         shoppingCart.add(itemA);
         shoppingCart.add(itemB);
-        expect(shoppingCart.items.length).to.be.equal(2);
+        shoppingCart.add(itemC);
+        expect(shoppingCart.items.length).to.be.equal(3);
         shoppingCart.reset();
         expect(shoppingCart.items.length).to.be.equal(0);
       });
