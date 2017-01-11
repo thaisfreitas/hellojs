@@ -23,7 +23,7 @@ describe('ShoppingCart', function() {
 
       shoppingCart.add(item);
       expect(shoppingCart.items.length).to.be.equal(1);
-      shoppingCart.reset()
+      shoppingCart.reset();
       expect(shoppingCart.items.length).to.be.equal(0);
     });
   });
