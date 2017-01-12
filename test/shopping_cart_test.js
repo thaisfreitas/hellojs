@@ -53,7 +53,7 @@ describe('ShoppingCart', function() {
     });
   });
   describe ('total',function(){
-    it('returns the total price for multiple items',function(){
+    it('returns 37 as total price for multiple items',function(){
       var  itemA = { name: 'agua de coco', price: 10 };
       var itemB = { name: 'cocacola', price: 12 };
       var itemC = { name: 'soda', price: 15 };
@@ -63,6 +63,17 @@ describe('ShoppingCart', function() {
       shoppingCart.add(itemC);
 
       expect(shoppingCart.total()).to.be.equal(37);
+    });
+    it('returns the total price for multiple items', function(){
+      var  itemA = { name: 'agua de coco', price: 23 };
+      var itemB = { name: 'cocacola', price: 1 };
+      var itemC = { name: 'soda', price: 9 };
+
+      shoppingCart.add(itemA);
+      shoppingCart.add(itemB);
+      shoppingCart.add(itemC);
+
+      expect(shoppingCart.total()).to.be.equal(33);
     });
   });
 });
